@@ -115,42 +115,7 @@
         .attr("src", $element.attr("src"));
       $("#" + lightboxId).modal("toggle");
     },
-    prevImage($gallery, lightboxId) {
-      var $activeImage = $("#" + lightboxId).find(".lightboxImage");
-      var activeTag = $(".tags-bar span.active-tag").data("images-toggle");
-      var $imagesCollection = [];
-
-      if (activeTag === "all") {
-        $imagesCollection = $gallery.find(".item-column > img.gallery-item");
-      } else {
-        $imagesCollection = $gallery.find(`.item-column > img.gallery-item[data-gallery-tag="${activeTag}"]`);
-      }
-
-      var currentIndex = $imagesCollection.index($activeImage);
-      var prevIndex = (currentIndex - 1 + $imagesCollection.length) % $imagesCollection.length;
-      var prevImageSrc = $($imagesCollection[prevIndex]).attr("src");
-
-      $activeImage.attr("src", prevImageSrc);
-    },
-
-    nextImage($gallery, lightboxId) {
-      var $activeImage = $("#" + lightboxId).find(".lightboxImage");
-      var activeTag = $(".tags-bar span.active-tag").data("images-toggle");
-      var $imagesCollection = [];
-
-      if (activeTag === "all") {
-        $imagesCollection = $gallery.find(".item-column > img.gallery-item");
-      } else {
-        $imagesCollection = $gallery.find(`.item-column > img.gallery-item[data-gallery-tag="${activeTag}"]`);
-      }
-
-      var currentIndex = $imagesCollection.index($activeImage);
-      var nextIndex = (currentIndex + 1) % $imagesCollection.length;
-      var nextImageSrc = $($imagesCollection[nextIndex]).attr("src");
-
-      $activeImage.attr("src", nextImageSrc);
-    },
-
+   
     createLightBox($gallery, lightboxId, navigation) {
       var lightBoxHTML = `
         <div class="modal fade" id="${lightboxId ? lightboxId : "galleryLightbox"}" tabindex="-1" role="dialog" aria-hidden="true">
@@ -158,11 +123,11 @@
             <div class="modal-content">
               <div class="modal-body">
                 ${navigation
-                  ? '<div class="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>'
+                  ? '<div id="mg-prev" style="cursor:pointer;position:absolute;top:50%;left:-15px;background:white;"><</div>'
                   : '<span style="display:none;"></span>'}
                 <img class="lightboxImage img-fluid" alt="Contenu de l'image affichée dans la modale au clic" />
                 ${navigation
-                  ? '<div class="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;">></div>'
+                  ? '<div id="mg-next" style="cursor:pointer;position:absolute;top:50%;right:-15px;background:white;">></div>'
                   : '<span style="display:none;"></span>'}
               </div>
             </div>
