@@ -44,7 +44,7 @@ body {
 
 #about {
 	display: flex;
-	background-color: #F6D2B8;
+	background-color: #D6B7A1;
 	padding-inline: 100px;
 	padding-block: 100px;
 	position: relative;
@@ -196,7 +196,7 @@ body {
 
 #contact {
 	margin: auto;
-	background-color: #D8D3A8 ;
+	background-color: #D6D1A7 ;
 	position: relative;
 	padding-inline: 100px;
 	padding-block: 100px;

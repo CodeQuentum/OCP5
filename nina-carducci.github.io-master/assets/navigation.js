@@ -33,6 +33,15 @@ window.addEventListener('load', function() {
       }
     });
   
+    // Ouvrir la modale à partir de l'image sélectionnée
+    items.forEach(item => {
+      item.addEventListener("click", event => {
+        event.preventDefault();
+        currentIndex = parseInt(item.getAttribute("data-index"));
+        updateLightboxImage(item);
+      });
+    });
+  
     function getFilteredItems() {
       const activeTag = document.querySelector(".tags-bar span.active-tag");
       const filterValue = activeTag ? activeTag.getAttribute("data-images-toggle") : "all";
