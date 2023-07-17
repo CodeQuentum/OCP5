@@ -7,9 +7,8 @@ body {
 	font-style: normal;
 }
 .top-header {
-	background-color: white;
 	position: sticky;
-	top:0;
+	top:0;nav-pil
 	z-index: 1000;
 	display: flex;
 	justify-content: space-between;
@@ -97,7 +96,6 @@ body {
 	justify-content: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-	color: #fff;
 	background-color: #BEB45A;
 	border-radius:25px ;
 }
