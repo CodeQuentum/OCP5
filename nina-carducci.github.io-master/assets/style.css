@@ -8,7 +8,7 @@ body {
 }
 .top-header {
 	position: sticky;
-	top:0;nav-pil
+	top:0;
 	z-index: 1000;
 	display: flex;
 	justify-content: space-between;
@@ -96,10 +96,12 @@ body {
 	justify-content: center;
 }
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+	color: #000;
 	background-color: #BEB45A;
 	border-radius:25px ;
 }
 .nav-pills .nav-link.active-tag {
+	color: #000;
 	background-color: #BEB45A;
 	border-radius: 25px;
   }
